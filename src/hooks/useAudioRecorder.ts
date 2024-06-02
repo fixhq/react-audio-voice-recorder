@@ -86,7 +86,9 @@ const useAudioRecorder: (
 
         recorder.addEventListener("dataavailable", (event) => {
           setRecordingBlob(event.data);
-          recorder.stream.getTracks().forEach((t) => t.stop());
+          recorder.stream.getTracks().forEach((t) => {
+            t.stop();
+          });
           setMediaRecorder(undefined);
         });
       })

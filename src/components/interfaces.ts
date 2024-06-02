@@ -1,4 +1,4 @@
-import {
+import type {
   MediaAudioTrackConstraints,
   recorderControls,
 } from "../hooks/useAudioRecorder";

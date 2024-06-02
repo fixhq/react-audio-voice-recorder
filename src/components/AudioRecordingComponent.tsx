@@ -1,5 +1,6 @@
-import React, { useState, useEffect, ReactElement, Suspense } from "react";
-import { Props } from "./interfaces";
+import React, { useState, useEffect, Suspense } from "react";
+import type { ReactElement } from "react";
+import type { Props } from "./interfaces";
 import useAudioRecorder from "../hooks/useAudioRecorder";
 
 import micSVG from "../icons/mic.svg";
@@ -139,7 +140,13 @@ const AudioRecorder: (props: Props) => ReactElement = ({
         className={`audio-recorder-mic ${
           classes?.AudioRecorderStartSaveClass ?? ""
         }`}
-        onClick={isRecording ? () => stopAudioRecorder() : startRecording}
+        onClick={
+          isRecording
+            ? () => {
+                stopAudioRecorder();
+              }
+            : startRecording
+        }
         data-testid="ar_mic"
         title={isRecording ? "Save recording" : "Start recording"}
       />
@@ -198,7 +205,9 @@ const AudioRecorder: (props: Props) => ReactElement = ({
         className={`audio-recorder-options ${
           !isRecording ? "display-none" : ""
         } ${classes?.AudioRecorderDiscardClass ?? ""}`}
-        onClick={() => stopAudioRecorder(false)}
+        onClick={() => {
+          stopAudioRecorder(false);
+        }}
         title="Discard Recording"
         data-testid="ar_cancel"
       />
