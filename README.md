@@ -1,5 +1,14 @@
 # **react-audio-voice-recorder**
 
+## EDITS
+[ESLint new config](https://eslint.org/docs/latest/use/migrate-to-9.0.0#flat-config)
+```bash
+# macOS / Linux
+export ESLINT_USE_FLAT_CONFIG="false"
+# Windows
+$env:ESLINT_USE_FLAT_CONFIG="false"
+```
+
 An audio recording helper for React. Provides a component and a hook to help with audio recording.
 
 [![NPM downloads][npm-download-img]][npm-download-url]
