@@ -66,15 +66,11 @@ describe("Test AudioRecorder", () => {
     render(<AudioRecorder />);
     const audioRecorder: HTMLElement = screen.getByTestId("audio_recorder");
     const audioRecorderMic: HTMLElement = screen.getByTestId("ar_mic");
-    await act(async () => {
-      await user.click(audioRecorderMic);
-    });
+    await user.click(audioRecorderMic);
     expect(audioRecorder).toHaveClass("recording");
 
     const audioRecorderCancel: HTMLElement = screen.getByTestId("ar_cancel");
-    await act(async () => {
-      await user.click(audioRecorderCancel);
-    });
+    await user.click(audioRecorderCancel);
     expect(audioRecorder.classList.contains("recording")).toBeFalsy();
     expect(getTracks).toHaveBeenCalled();
     expect(stop).toHaveBeenCalled();
@@ -86,14 +82,10 @@ describe("Test AudioRecorder", () => {
     render(<AudioRecorder onRecordingComplete={onRecordingComplete} />);
     const audioRecorder: HTMLElement = screen.getByTestId("audio_recorder");
     const audioRecorderMic: HTMLElement = screen.getByTestId("ar_mic");
-    await act(async () => {
-      await user.click(audioRecorderMic);
-    });
+    await user.click(audioRecorderMic);
     expect(audioRecorder).toHaveClass("recording");
 
-    await act(async () => {
-      await user.click(audioRecorderMic);
-    });
+    await user.click(audioRecorderMic);
     expect(audioRecorder.classList.contains("recording")).toBeFalsy();
     expect(onRecordingComplete).toHaveBeenCalled();
     expect(getTracks).toHaveBeenCalled();
@@ -106,24 +98,18 @@ describe("Test AudioRecorder", () => {
     render(<AudioRecorder onRecordingComplete={onRecordingComplete} />);
     const audioRecorder: HTMLElement = screen.getByTestId("audio_recorder");
     const audioRecorderMic: HTMLElement = screen.getByTestId("ar_mic");
-    await act(async () => {
-      await user.click(audioRecorderMic);
-    });
+    await user.click(audioRecorderMic);
     expect(audioRecorder).toHaveClass("recording");
 
     const audioRecorderTimer: HTMLElement = screen.getByTestId("ar_timer");
     const audioRecorderPause: HTMLElement = screen.getByTestId("ar_pause");
-    await act(async () => {
-      await user.click(audioRecorderPause);
-    });
+    await user.click(audioRecorderPause);
     const time = audioRecorderTimer.textContent;
 
     expect(audioRecorder).toHaveClass("recording"); //should still be recording after pause
     expect(audioRecorderTimer.textContent).toEqual(time); //timer should have have stayed the same after 1 second
 
-    await act(async () => {
-      await user.click(audioRecorderMic);
-    });
+    await user.click(audioRecorderMic);
     expect(audioRecorder.classList.contains("recording")).toBeFalsy();
     expect(onRecordingComplete).toHaveBeenCalled();
     expect(getTracks).toHaveBeenCalled();
@@ -136,9 +122,7 @@ describe("Test AudioRecorder", () => {
     render(<AudioRecorder onRecordingComplete={onRecordingComplete} />);
     const audioRecorder: HTMLElement = screen.getByTestId("audio_recorder");
     const audioRecorderMic: HTMLElement = screen.getByTestId("ar_mic");
-    await act(async () => {
-      await user.click(audioRecorderMic);
-    });
+    await user.click(audioRecorderMic);
     expect(audioRecorder).toHaveClass("recording");
 
     // Wait a second
