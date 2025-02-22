@@ -1,5 +1,4 @@
 import { MediaAudioTrackConstraints, recorderControls } from '../hooks/useAudioRecorder';
-
 interface StyleProps {
     /**
      * Applies passed classes to audio recorder container

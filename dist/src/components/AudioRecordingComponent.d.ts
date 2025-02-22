@@ -1,6 +1,5 @@
 import { ReactElement } from 'react';
 import { Props } from './interfaces';
-
 /**
  * Usage: https://github.com/samhirtarif/react-audio-recorder#audiorecorder-component
  *
