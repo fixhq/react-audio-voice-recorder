@@ -1,7 +1,7 @@
 {
   "name": "@fixhq/react-audio-voice-recorder",
   "private": false,
-  "version": "2.2.99",
+  "version": "2.2.100",
   "type": "module",
   "license": "MIT",
   "author": "Samhir Tarif",
