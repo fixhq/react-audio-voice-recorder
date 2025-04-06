@@ -8,7 +8,7 @@
   "description": "2025-02 Updated fork of react-audio-voice-recorder v2.2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fixhq/react-audio-recorder.git"
+    "url": "git+https://github.com/fixhq/react-audio-recorder.git"
   },
   "keywords": [
     "react",
